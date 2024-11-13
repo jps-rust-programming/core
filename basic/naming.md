@@ -124,3 +124,14 @@ trait Cloneable {
     fn clone(&self) -> Self;
 }
 ```
+
+### Summary Table
+
+|Entity Type |Convention |Example|
+| ---------- |-----------|-------|
+|Variable / Function Name| snake_case| let my_variable = 5;|
+|Struct / Enum / Trait Name |CamelCase (PascalCase) |struct MyStruct| {}
+|Constant / Static Variable |UPPERCASE_WITH_UNDERSCORES |const MAX_SIZE: usize = 10;|
+|Type Alias |CamelCase |type MyResult<T> = Result<T, MyError>;|
+|Enum Variant |CamelCase| enum Direction { North, South }|
+|Module Name |snake_case| mod my_module;|
