@@ -39,7 +39,22 @@ trait Drawable {
 ```
 
 ## 3. Uppercase with Underscores for Constants and Static Variables
-Constants and static variables (including const values) are written in UPPERCASE_WITH_UNDERSCORES, which distinguishes them from regular variables and functions.
 
-Examples:
+Constants and static variables (including const values) are written in `UPPERCASE_WITH_UNDERSCORES`, which distinguishes them from regular variables and functions.
 
+**Examples:**
+
+```rs
+const MAX_RETRIES: u32 = 5;
+static GLOBAL_VARIABLE: i32 = 100;
+```
+
+## 4. Modules and Files
+
+For module names, Rust uses `snake_case`. The names of files that contain modules also follow the same convention. A module named utils would correspond to a file named utils.rs.
+
+**Example:**
+
+```rs
+mod my_module; // refers to `my_module.rs` or `my_module/mod.rs`
+```
