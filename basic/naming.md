@@ -58,3 +58,13 @@ For module names, Rust uses `snake_case`. The names of files that contain module
 ```rs
 mod my_module; // refers to `my_module.rs` or `my_module/mod.rs`
 ```
+
+## 5. Type Aliases
+
+Type aliases follow the `CamelCase` convention, similar to `structs`, `enums`, and `traits`.
+
+**Example:**
+
+```rs
+type MyAlias = Vec<i32>;
+```
