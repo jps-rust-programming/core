@@ -68,3 +68,34 @@ Type aliases follow the `CamelCase` convention, similar to `structs`, `enums`, a
 ```rs
 type MyAlias = Vec<i32>;
 ```
+
+## 6. Enum Variants
+
+Enum variants are named using CamelCase, starting with an uppercase `letter`, similar to `struct` and `trait` names.
+
+**Example:**
+
+```rs
+enum Color {
+    Red,
+    Green,
+    Blue,
+}
+```
+
+## 7. Private and Public Items
+
+Rust uses snake_case for private members and CamelCase for public structs, enums, and traits. The convention for visibility follows the item’s case style:
+
+- Private fields in structs or enums: `snake_case`
+
+- Public fields in structs or enums: `CamelCase` (though it’s recommended to be explicit about visibility for clarity).
+
+**Example:**
+
+```rs
+pub struct User {
+    pub name: String,
+    age: u32,  // private field, snake_case is fine
+}
+```
