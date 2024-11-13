@@ -10,3 +10,10 @@ Scalar types represent a single value. Rust has four basic scalar types:
 - floating-point numbers,
 - booleans, and
 - characters.
+
+## 2. Compound Types
+
+Compound types allow you to combine multiple values into one type. Rust has two kinds of compound types:
+
+1. tuples and
+2. arrays.
