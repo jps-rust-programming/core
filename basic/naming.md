@@ -114,3 +114,13 @@ name = "my_crate_name"
 ## 9. Avoid Hungarian Notation
 
 Rust does not use Hungarian notation (prefixing variable names with their types), which is common in other languages like `C or C++`. For example, avoid naming variables like strName or i32Counter. Instead, use descriptive names in snake_case.
+
+## 10. Prefix for Traits and Types in Some Cases
+
+Sometimes, the name of a trait can reflect the behavior it represents. In certain cases, traits use a common suffix like `-able` for traits that represent capabilities or actions:
+
+```rs
+trait Cloneable {
+    fn clone(&self) -> Self;
+}
+```
