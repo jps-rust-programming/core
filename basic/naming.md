@@ -99,3 +99,18 @@ pub struct User {
     age: u32,  // private field, snake_case is fine
 }
 ```
+
+## 8. Crate Names
+
+Crate names are generally in `snake_case`, and this convention extends to the names of packages when publishing to crates.io.
+
+**Example:**
+
+```rs
+[package]
+name = "my_crate_name"
+```
+
+## 9. Avoid Hungarian Notation
+
+Rust does not use Hungarian notation (prefixing variable names with their types), which is common in other languages like `C or C++`. For example, avoid naming variables like strName or i32Counter. Instead, use descriptive names in snake_case.
