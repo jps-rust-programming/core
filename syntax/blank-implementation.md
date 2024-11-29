@@ -1,10 +1,10 @@
-# What Are Blanket Implementations in Rust?
+**What Are Blanket Implementations in Rust?**
 
 In Rust, blanket implementations refer to the practice of implementing a trait for all types that satisfy certain conditions, usually by leveraging trait bounds. Blanket implementations allow you to implement a trait for a wide range of types in a `single`, `generic implementation` rather than writing a separate implementation for each type individually.
 
 Rust provides a mechanism to implement `traits` for any type that meets a certain set of conditions. This is particularly useful when you want to add functionality to a large set of types, like implementing a trait for all types that are `Clone`, `Copy`, or `satisfy other constraints`.
 
-## Example: Blanket Implementation of Traits
+**Example: Blanket Implementation of Traits**
 
 Let’s look at an example where we implement a trait for all types that implement another trait. This is a simple case of a blanket implementation.
 
@@ -47,7 +47,7 @@ fn main() {
 
 ```
 
-### Explanation:
+**Explanation:**
 
 - `Trait Summary`: This trait defines a method `summarize()`, which returns a `String`.
 
@@ -57,7 +57,7 @@ fn main() {
 
 - `summarize() in Action`: When calling summarize() on an Article, it uses the `to_string()` method, which was implemented in `ToString`.
 
-### Use Cases of Blanket Implementations
+**Use Cases of Blanket Implementations**
 
 1. `Implementing Common Traits for Many Types`:
 
@@ -115,7 +115,7 @@ impl<T: Eq> EqPlus for T {}
 // Now all types that implement `Eq` also have `is_equal_to()`.
 ```
 
-#### Example: Blanket Implementation for Clone
+**Example: Blanket Implementation for Clone**
 
 Let’s look at a more concrete example where we create a blanket implementation for a trait `Printable` that will work for all types that implement Clone:
 
@@ -143,7 +143,7 @@ fn main() {
 }
 ```
 
-#### Explanation:
+**Explanation:**
 
 - `Trait Printable`: Defines a print method that prints the value of the object.
 
