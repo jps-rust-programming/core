@@ -66,3 +66,55 @@ Rust has powerful type inference, which means that the compiler can often determ
 let a = 5; // inferred as i32
 let b = 3.14; // inferred as f64
 ```
+
+### Primitive Data Types
+
+Rust provides a set of primitive data types:
+
+#### Integer Types:
+
+- Signed integers: i8, i16, i32, i64, isize
+- Unsigned integers: u8, u16, u32, u64, usize
+- isize and usize are architecture-dependent, typically 32-bit on 32-bit systems and 64-bit on 64-bit systems.
+
+#### Floating-Point Types:
+
+- f32: 32-bit single-precision float
+- f64: 64-bit double-precision float
+
+#### Boolean Type:
+
+- bool: Represents a boolean value, either true or false.
+  Character Type:
+
+- char: Represents a single Unicode character, enclosed in single quotes.
+
+### Compound Data Types
+
+**- Tuple**:
+
+A fixed-size collection of elements of different types.
+Example: let tup: (i32, f64, u8) = (500, 6.4, 1);
+
+**- Array**:
+
+A fixed-size collection of elements of the same type.
+Example: let a: [i32; 5] = [1, 2, 3, 4, 5];
+
+**- Slice**:
+
+A reference to a contiguous sequence of elements in an array.
+Example: let slice = &a[1..3];
+
+**- String**:
+
+A growable sequence of characters.
+Example: let s = String::from("hello");
+
+### Ownership and Borrowing
+
+Rust's ownership system ensures memory safety and prevents data races. Key concepts include:
+
+- `Ownership`: Each value in Rust has an owner.
+- `Borrowing`: You can borrow a value to use it without taking ownership.
+- `Lifetime Annotations`: Specify the lifetime of a borrow.
