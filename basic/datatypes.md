@@ -118,3 +118,24 @@ Rust's ownership system ensures memory safety and prevents data races. Key conce
 - `Ownership`: Each value in Rust has an owner.
 - `Borrowing`: You can borrow a value to use it without taking ownership.
 - `Lifetime Annotations`: Specify the lifetime of a borrow.
+
+```rust
+fn main() {
+    let x = 5; // Integer
+    let y = 2.5; // Float
+    let z = true; // Boolean
+    let c = 'A'; // Character
+
+    let tup: (i32, f64, u8) = (500, 6.4, 1);
+    let a: [i32; 5] = [1, 2, 3, 4, 5];
+    let s = String::from("hello");
+
+    println!("Integer: {}", x);
+    println!("Float: {}", y);
+    println!("Boolean: {}", z);
+    println!("Character: {}", c);
+    println!("Tuple: {:?}", tup);
+    println!("Array: {:?}", a);
+    println!("String: {}", s);
+}
+```
