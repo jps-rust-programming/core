@@ -90,3 +90,10 @@ fn main() {
 
 - The find_even_number function searches through the array of integers. If it finds an even number, it returns Some(number). If it doesn’t find any, it returns None.
 - We use match to handle both the case where a number is found (Some) and the case where no number is found (None).
+
+#### Common Option Methods:
+
+- `is_some(), is_none()`: Check if the option contains Some or is None.
+- `unwrap()`: Returns the value inside Some, but panics if the option is None.
+- `expect()`: Similar to unwrap(), but with a custom error message.
+- `map(), and_then()`: Transform the value inside Some, if present.
