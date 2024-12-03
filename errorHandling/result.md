@@ -124,3 +124,51 @@ fn main() -> Result<(), String> {
 
 - The `?` operator automatically returns the `Err` from the divide function if it occurs. The main function returns a Result to propagate the error.
 - The return type of main is `Result<(), String>`, where `()` means no meaningful return value on success.
+
+## 4. Custom Error Types
+
+You can create custom error types using enums or structs, especially when your application needs to deal with multiple types of errors.
+
+**Example: Custom Error Type**
+
+```rust
+use std::fmt;
+
+#[derive(Debug)]
+enum MyError {
+    DivisionByZero,
+    NegativeNumber,
+}
+
+impl fmt::Display for MyError {
+    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
+        match *self {
+            MyError::DivisionByZero => write!(f, "Cannot divide by zero"),
+            MyError::NegativeNumber => write!(f, "Negative number is not allowed"),
+        }
+    }
+}
+
+fn divide(a: i32, b: i32) -> Result<i32, MyError> {
+    if b == 0 {
+        Err(MyError::DivisionByZero)
+    } else if a < 0 || b < 0 {
+        Err(MyError::NegativeNumber)
+    } else {
+        Ok(a / b)
+    }
+}
+
+fn main() {
+    match divide(-10, 2) {
+        Ok(result) => println!("Result: {}", result),
+        Err(e) => println!("Error: {}", e),
+    }
+}
+```
+
+**Explanation:**
+
+- We define a custom error type `MyError` with variants like DivisionByZero and NegativeNumber.
+- We implement `fmt::Display` for MyError so we can easily print the error messages.
+- The divide function returns a `Result<i32, MyError>`, and the error type is used to communicate specific error conditions.
