@@ -2,6 +2,8 @@
 
 In Rust, error handling is a fundamental part of the language, and it is done using two primary mechanisms: `Result` and `Option` types. These types allow you to handle errors explicitly, ensuring safety and making the code more robust.
 
+## 1. The Result Type
+
 ```rust
 enum Result<T, E> {
     Ok(T), // A variant for success, with a value of type T
@@ -48,3 +50,43 @@ fn main() {
 - `unwrap()`: Returns the value inside Ok, but panics if the result is Err.
 - `expect()`: Similar to unwrap(), but you can provide a custom error message.
 - `map(), and_then()`: Methods for transforming the Result value.
+
+## 2. The Option Type
+
+The Option type is used when a value is either present or absent (it’s particularly useful for handling cases where a value may not exist).
+
+It’s defined as:
+
+```rust
+enum Option<T> {
+    Some(T),  // A variant for a value of type T
+    None,     // A variant representing no value
+}
+```
+
+**Example: Using Option for Optional Values**
+
+```rust
+fn find_even_number(numbers: &[i32]) -> Option<i32> {
+    for &num in numbers {
+        if num % 2 == 0 {
+            return Some(num);
+        }
+    }
+    None
+}
+
+fn main() {
+    let numbers = [1, 3, 5, 8, 9];
+
+    match find_even_number(&numbers) {
+        Some(num) => println!("Found an even number: {}", num),
+        None => println!("No even number found"),
+    }
+}
+```
+
+**Explanation**:
+
+- The find_even_number function searches through the array of integers. If it finds an even number, it returns Some(number). If it doesn’t find any, it returns None.
+- We use match to handle both the case where a number is found (Some) and the case where no number is found (None).
