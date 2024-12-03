@@ -97,3 +97,30 @@ fn main() {
 - `unwrap()`: Returns the value inside Some, but panics if the option is None.
 - `expect()`: Similar to unwrap(), but with a custom error message.
 - `map(), and_then()`: Transform the value inside Some, if present.
+
+## 3. Propagating Errors
+
+You can propagate errors in Rust using the ? operator. This operator returns early if the result is an Err or None and propagates the error to the calling function.
+
+**Example: Propagating Errors with ?**
+
+```rust
+fn divide(a: i32, b: i32) -> Result<i32, String> {
+    if b == 0 {
+        Err("Cannot divide by zero".to_string())
+    } else {
+        Ok(a / b)
+    }
+}
+
+fn main() -> Result<(), String> {
+    let result = divide(10, 0)?; // This will return the error if divide fails
+    println!("Result: {}", result);
+    Ok(())
+}
+```
+
+**Explanation:**
+
+- The `?` operator automatically returns the `Err` from the divide function if it occurs. The main function returns a Result to propagate the error.
+- The return type of main is `Result<(), String>`, where `()` means no meaningful return value on success.
